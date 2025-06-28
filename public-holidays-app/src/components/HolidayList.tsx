@@ -60,8 +60,8 @@ function HolidayList({ countryCode }: Props) {
                   </h4>
                   <p> </p>
                   <div className="dates">
-                    <p className="date">Start date:{holiday.startDate}</p>
-                    <p className="date">End date:{holiday.endDate}</p>
+                    <p className="date">Start date: {holiday.startDate}</p>
+                    <p className="date">End date: {holiday.endDate}</p>
                   </div>
                 </div>
                 <small className="country">{countryCode}</small>
