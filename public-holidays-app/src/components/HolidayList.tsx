@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { closestIndexTo } from "date-fns";
+import "./HolidayList.css";
 
 interface Props {
   countryCode: string;
@@ -14,8 +15,6 @@ type Holiday = {
   startDate: string;
   endDate: string;
 };
-
-let countryCode = "NL";
 
 function HolidayList({ countryCode }: Props) {
   const { data, isLoading, error } = useQuery<Holiday[]>({
@@ -55,16 +54,17 @@ function HolidayList({ countryCode }: Props) {
               <div className="d-flex w-100 justify-content-between">
                 <div className="mb-2">
                   <h4 className="mb-1">
-                    Holiday:
                     {englishName?.text ||
                       holiday.name[0]?.text ||
                       "Unnamed Holiday"}
                   </h4>
                   <p> </p>
-                  <p>Start date:{holiday.startDate}</p>
-                  <p>End date:{holiday.endDate}</p>
+                  <div className="dates">
+                    <p className="date">Start date:{holiday.startDate}</p>
+                    <p className="date">End date:{holiday.endDate}</p>
+                  </div>
                 </div>
-                <small>{countryCode}</small>
+                <small className="country">{countryCode}</small>
               </div>
             </li>
           );

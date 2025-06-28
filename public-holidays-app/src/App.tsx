@@ -10,8 +10,10 @@ function App() {
   return (
     <div className="paper">
       {" "}
-      <h1>Public Holiday List</h1>
-      <CountrySelector selectedCountry={country} onChange={setCountry} />
+      <div className="topbar">
+        <h1 className="title">Public Holiday List</h1>
+        <CountrySelector selectedCountry={country} onChange={setCountry} />
+      </div>
       <HolidayList countryCode={country} />
     </div>
   );

@@ -1,0 +1,17 @@
+.dates{
+    display: flex;
+    gap:30px;
+}
+
+.country{
+    color: green;
+}
+
+.mb-2{
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.mb-1{
+    font-family: sans-serif;
+}

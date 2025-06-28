@@ -1,0 +1,11 @@
+.title{
+  font-family: serif;
+  padding-left: 1.2rem;
+  padding-top:1.3rem;
+  color:black;
+  padding-bottom: 1rem;
+}
+
+.topbar{
+  display:flex;
+}

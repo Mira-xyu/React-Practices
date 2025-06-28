@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import "./CountrySelector.css";
+import { useState } from "react";
 
 interface Country {
   isoCode: string;
@@ -12,6 +14,7 @@ interface Props {
 }
 
 function CountrySelector({ selectedCountry, onChange }: Props) {
+  const [clicked, setClicked] = useState(false);
   const { data, error } = useQuery<Country[]>({
     queryKey: ["countries"],
     queryFn: async () => {
@@ -34,7 +37,13 @@ function CountrySelector({ selectedCountry, onChange }: Props) {
   return (
     <div className="dropdown">
       <button
-        className="btn btn-secondary dropdown-toggle"
+        className="btn dropdown-toggle custom-dropdown-btn"
+        // className={
+        //   clicked
+        //     ? "btn dropdown-toggle clicked-btn"
+        //     : "btn dropdown-toggle custom-dropdown-btn"
+        // } //dropdown component from bootstrap
+        // onClick={() => setClicked(!clicked)}
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
@@ -47,7 +56,7 @@ function CountrySelector({ selectedCountry, onChange }: Props) {
           return (
             <li key={country.isoCode}>
               <button
-                className="dropdown-item"
+                className={"dropdown-item"}
                 onClick={() => onChange(country.isoCode)}
               >
                 {englishName?.text || country.name[0]?.text || "Unnamed"}
