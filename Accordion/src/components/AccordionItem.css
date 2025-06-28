@@ -1,0 +1,21 @@
+.accordion-button:focus{
+    box-shadow:none !important;
+
+}
+
+.accordion-button:hover{
+    box-shadow:none !important;
+    background-color: #f1fbf6;
+}
+
+.accordion-button:active{
+    box-shadow:none !important;
+    background-color: #c2fade;
+}
+
+
+.accordion-button:not(.collapsed) {
+  background-color: #dcffec;
+  color: #000;
+}
+

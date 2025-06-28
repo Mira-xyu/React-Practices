@@ -14,7 +14,7 @@ interface Props {
 }
 
 function CountrySelector({ selectedCountry, onChange }: Props) {
-  const [clicked, setClicked] = useState(false);
+  //const [clicked, setClicked] = useState(false);
   const { data, error } = useQuery<Country[]>({
     queryKey: ["countries"],
     queryFn: async () => {
